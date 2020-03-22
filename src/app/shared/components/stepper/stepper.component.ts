@@ -16,7 +16,6 @@ export class StepperComponent {
   public iconDirection = 'flex-end';
 
   @Output()
-  public sendStepper = new EventEmitter<Icons>();
-
+  public sendStepper = new EventEmitter<any>();
 
 }

@@ -1,0 +1,13 @@
+<div class="form-group">
+  <input 
+    type="text" class="form-input"
+    [class.form-input__invalid]="invalid"
+    [class.form-input__valid]="!invalid"
+    [id]="'md-id-' + id" [placeholder]="placeholder" 
+    (input)="dataValue = $event.target.value">
+  <label 
+    class="form-label" [for]="'md-id-' + id"
+    [class.form-label__invalid]="invalid"
+    [class.form-label__fixtop]="dataValue.length"
+    >{{ label }}</label>
+</div>

@@ -2,20 +2,26 @@
   <div class="stepper-default">
     <h4>Stepper Default</h4>
     <app-stepper [listIcons]="listIcons" [iconDirection]="direct" (sendStepper)="stepperEvent($event)"></app-stepper>
+    <form class="container-templates"
+      [formGroup]="form">
+      <div class="item" *ngIf="indexId === 0 || indexId === null">
+        <app-input></app-input>
+      </div>
+      <div class="item" *ngIf="indexId === 1">
+        <h1>Test 002</h1>
+      </div>
+      <div class="item" *ngIf="indexId === 2">
+        <h1>Test 003</h1>
+      </div>
+      <div class="item" *ngIf="indexId === 3">
+        <h1>Test 004</h1>
+      </div>
+      <div class="item" *ngIf="indexId === 4">
+        <h1>Test 005</h1>
+      </div>
+      <div class="item" *ngIf="indexId === 5">
+        <h1>Test 006</h1>
+      </div>
+    </form>
   </div>
-</div>
-<div class="medium-text">
-  <div class="stepper-default">
-    <h4>Stepper Text</h4>
-    <app-stepper-text [listText]="listText" [iconDirection]="directIconText" (sendStepper)="stepperEvent($event)">
-    </app-stepper-text>
-  </div>
-</div>
-
-<div #test>
-  <h2>test</h2>
-</div>
-
-<div #test1>
-  <h2>test 1111</h2>
 </div>

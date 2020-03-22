@@ -1,24 +1,22 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Icons } from '../core/models/Icons';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-medium-stepper',
   templateUrl: './medium-stepper.component.html',
   styleUrls: ['./medium-stepper.component.scss']
 })
-export class MediumStepperComponent {
+export class MediumStepperComponent implements OnInit {
 
-  @ViewChild('test', {static: true})
-  public test: TemplateRef<any>;
 
-  @ViewChild('test1', {static: true})
-  public test1: TemplateRef<any>;
+  public form: FormGroup;
 
   public listIcons: Icons [] = [
     {
       completed: true,
-      Icon: 'fab fa-angular',
+      Icon: 'fab fa-angular'
     },
     {
      completed: true,
@@ -42,45 +40,56 @@ export class MediumStepperComponent {
     }
   ];
 
-  public listText: Icons [] = [
-    {
-      completed: true,
-      Icon: 'fab fa-angular',
-      template: this.test
-    },
-    {
-     completed: true,
-     Icon: 'fab fa-vuejs',
-     template: this.test1
-    }
-    // {
-    //   completed: false,
-    //   Icon: 'fab fa-react',
-    //   template: 'template 003'
-    // },
-    // {
-    //   completed: false,
-    //   Icon: 'fab fa-js-square',
-    //   template: 'template 004'
-    // },
-    // {
-    //   completed: false,
-    //   Icon: 'fab fa-java',
-    //   template: 'template 005'
-    // },
-    // {
-    //   completed: false,
-    //   Icon: 'fab fa-node-js',
-    //   template: 'template 006'
-    // }
-  ];
-
   public direct = 'flex-end';
-  public directIconText = 'flex-start';
+  public indexId = null;
 
-
-  public stepperEvent(event: Icons) {
-    this.listIcons.indexOf(event);
+  constructor(
+    private formbuilder: FormBuilder
+  ) {
   }
+
+  ngOnInit(): void {
+    this.createForm();
+  }
+
+  private createForm() {
+    this.form = this.formbuilder.group({
+      Name: [null],
+      FirtName: [null],
+      TemplateTwo: this.formbuilder.group({
+        Rua: [null],
+        Bairro: [null],
+        Cidade: [null],
+        Estado: [null]
+      }),
+      TemplateThree: this.formbuilder.group({
+        Idade: [null],
+        Nascimento: [null],
+        CidadeDeNascimento: [null],
+        EstadoDeNascimento: [null]
+      }),
+      TemplateFour: this.formbuilder.group({
+        Empressa: [null],
+        Cargo: [null],
+        Setor: [null],
+      }),
+      TemplateFive: this.formbuilder.group({
+        NomeEsposa: [null],
+        NomeFilho: [null]
+      }),
+      TemplateSix: this.formbuilder.group({
+        Evento: [null],
+        Cidade: [null],
+        Bairro: [null],
+        Estado: [null]
+      }),
+    });
+  }
+  public stepperEvent(event: number) {
+    this.indexId = event;
+  }
+
+
+
 
 }
