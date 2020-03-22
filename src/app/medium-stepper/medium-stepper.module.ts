@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { MediumStepperComponent } from './medium-stepper.component';
-import { StepperRoutingModule } from './medium-stepper-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: MediumStepperComponent
+  }
+];
 
 @NgModule({
   declarations: [MediumStepperComponent],
   imports: [
-    StepperRoutingModule,
+    RouterModule.forChild(routes),
     SharedModule
   ]
 })

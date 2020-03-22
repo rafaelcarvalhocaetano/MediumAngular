@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+import { Icons } from 'src/app/core/models/Icons';
 
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss']
 })
-export class StepperComponent implements OnInit {
+export class StepperComponent {
 
-  constructor() { }
+  @Input()
+  public listIcons: Icons [] = [];
 
-  ngOnInit(): void {
-  }
+  @Input()
+  public iconDirection = 'flex-end';
+
+  @Output()
+  public sendStepper = new EventEmitter<Icons>();
+
 
 }
