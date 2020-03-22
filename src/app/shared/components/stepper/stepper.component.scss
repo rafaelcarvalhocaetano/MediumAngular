@@ -1,0 +1,65 @@
+@import '../../../../assets/styles/colors.scss';
+@import '../../../../assets/styles/mixis.scss';
+
+.stepper-container {
+	width: 100%;
+	height: 35px;
+	display: flex;
+	align-items: center;
+	.stepper-line {
+		width: 100%;
+		height: 4px;
+		background-color: $secundary-stepper;
+		display: flex;
+		align-items: center;
+    box-sizing: border-box;
+    .action {
+      z-index: 1;
+      .icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        background-color: $white;
+        padding: 2px;
+        border: 2px solid $secundary-stepper;
+        border-radius: 50%;
+        font-size: 15px;
+        cursor: pointer;
+        color: #333;
+      }
+    }
+    &:nth-child(n + 1) {
+      border-radius: 10px;
+      margin-left: -2px;
+    }
+    &__stepper_color {
+      animation: __stepper  1s 100ms both;
+      background-color: $primary-stepper;
+      .icons {
+        border: 2px solid $primary-stepper;
+        animation: __stepper_border 1s 100ms both;
+        color: $primary-stepper;
+      }
+    }
+	}
+}
+
+@keyframes __stepper {
+  from {
+    background-color: $secundary-stepper;
+  }
+  to {
+    background-color: $primary-stepper;
+  }
+}
+
+@keyframes __stepper_border {
+  from {
+    border-color: $secundary-stepper;
+  }
+  to {
+    border-color: $primary-stepper;
+  }
+} 

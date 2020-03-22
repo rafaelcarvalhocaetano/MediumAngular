@@ -1,0 +1,73 @@
+@import '../../../../assets/styles/colors.scss';
+@import '../../../../assets/styles/mixis.scss';
+
+.stepper-container {
+  display: flex;
+  flex-direction: row;
+  &__column {
+    height: 100%;
+    flex-direction: column;
+  }
+  .stepper-line {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    .action {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-radius: 50%;
+      &__column {
+        width: 4%;
+        flex-direction: column;
+      }
+      &__order {
+        order: 0;
+      }
+      .icons {
+        font-size: 15px;
+        border: 2px solid $primary-stepper;
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+        background-color: #FFF; 
+        order: 1;
+        &__order {
+          order: 0;
+        }
+      }
+      .stepper {
+        border-radius: 0;
+        width: 100%;
+        height: 4px;
+        display: flex;
+        background-color: $primary-stepper;
+        &__order {
+          order: 1;
+        }
+        &__column {
+          width: 4px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background-color: $primary-stepper;
+        }
+      }
+    }
+    .text {
+      font-size: 12px;
+      font-family: 'Cinzel', serif;
+      background-color: #FFF;
+      margin: 14px 0 0 5px;
+      &__order {
+        order: 1;
+        align-self: flex-end;
+        margin: 0 0 13px 5px;
+      }
+    }
+    
+  }
+}
