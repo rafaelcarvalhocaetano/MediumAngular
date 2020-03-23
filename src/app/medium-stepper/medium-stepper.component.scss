@@ -24,6 +24,14 @@
         padding: 20px;
         -webkit-animation: fadeLeft 1s ease-in-out;
         animation: fadeLeft 1s ease-in-out;
+        .ipt {
+          margin: 20px;
+        }
+        display: none;
+        &__visible {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
   }

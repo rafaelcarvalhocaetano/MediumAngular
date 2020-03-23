@@ -4,7 +4,7 @@ import { Icons } from '../core/models/Icons';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-medium-stepper',
+  selector: 'md-medium-stepper',
   templateUrl: './medium-stepper.component.html',
   styleUrls: ['./medium-stepper.component.scss']
 })
@@ -54,8 +54,8 @@ export class MediumStepperComponent implements OnInit {
 
   private createForm() {
     this.form = this.formbuilder.group({
-      Name: [null],
-      FirtName: [null],
+      Nome: [null],
+      SobreNome: [null],
       TemplateTwo: this.formbuilder.group({
         Rua: [null],
         Bairro: [null],
@@ -85,10 +85,10 @@ export class MediumStepperComponent implements OnInit {
       }),
     });
   }
+
   public stepperEvent(event: number) {
     this.indexId = event;
   }
-
 
 
 

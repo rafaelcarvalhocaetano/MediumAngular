@@ -16,6 +16,9 @@ import { InputComponent } from './components/input/input.component';
     FormsModule,
     ReactiveFormsModule
   ],
+  entryComponents: [
+    InputComponent
+  ],
   exports: [
     StepperComponent,
     InputComponent,
