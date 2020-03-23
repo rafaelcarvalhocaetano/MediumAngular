@@ -9,8 +9,7 @@
   }
   .form-input {
     border: 0;
-    border-bottom: 2px solid $secundary-stepper;
-    
+    border-bottom: 3px solid $secundary-stepper;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     outline: none;
@@ -18,17 +17,17 @@
     box-sizing: border-box;
     padding: 5px;
     &:focus {
-      border-bottom: 2px solid $primary-stepper;
+      border-bottom: 3px solid $primary-stepper;
       &::placeholder {
         visibility: visible;
         padding-left: 3px;
       }
     }
     &__invalid {
-      border-bottom: 2px solid red;
+      border-bottom: 3px solid red;
       color: red;
       &:focus {
-        border-bottom: 2px solid red;
+        border-bottom: 3px solid red;
         &::placeholder {
           visibility: visible;
           padding-left: 3px;
@@ -37,8 +36,8 @@
     }
     &:focus + .form-label {
       color: $primary-stepper;
-      font-size: 16px;
-      top: -30px;
+      top: -27px;
+      font-size: 12px;
       left: 0;
       pointer-events: none;
       &__invalid {
@@ -51,7 +50,8 @@
   }
   .form-label {
     &__fixtop {
-      top: -30px;
+      top: -27px;
+      font-size: 12px;
     }
     &__invalid {
       color: red;

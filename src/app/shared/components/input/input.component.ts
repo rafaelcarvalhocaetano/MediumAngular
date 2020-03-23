@@ -2,7 +2,7 @@ import { Component, forwardRef, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 @Component({
-  selector: 'app-input',
+  selector: 'md-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
   providers: [{
@@ -14,12 +14,11 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 export class InputComponent implements ControlValueAccessor {
 
   @Input() public isDisabled?: boolean;
-  @Input() public isPrice: boolean;
-  @Input() public id = 'rafa';
+  @Input() public id = '';
   @Input() public label = 'Label';
-  @Input() public placeholder = 'palce';
+  @Input() public placeholder = '';
   @Input() public complete = false;
-  @Input() public invalid = true;
+  @Input() public invalid = false;
 
 
   public dataValue = '';

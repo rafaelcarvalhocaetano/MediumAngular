@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Icons } from 'src/app/core/models/Icons';
 
 @Component({
-  selector: 'app-stepper',
+  selector: 'md-stepper',
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss']
 })

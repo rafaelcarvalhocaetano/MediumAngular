@@ -1,27 +1,72 @@
 <div class="medium-stepper">
   <div class="stepper-default">
     <h4>Stepper Default</h4>
-    <app-stepper [listIcons]="listIcons" [iconDirection]="direct" (sendStepper)="stepperEvent($event)"></app-stepper>
-    <form class="container-templates"
-      [formGroup]="form">
-      <div class="item" *ngIf="indexId === 0 || indexId === null">
-        <app-input></app-input>
+    <md-stepper [listIcons]="listIcons" [iconDirection]="direct" (sendStepper)="stepperEvent($event)"></md-stepper>
+    <form class="container-templates" 
+    [formGroup]="form">
+      
+      <div  class="item" 
+        [class.item__visible]="indexId === 0 || indexId === null">
+        <md-input class="ipt" id="nome" label="Nome" placeholder="Nome do Usuário" [invalid]="false"
+          formControlName="Nome"></md-input>
+        <md-input class="ipt" id="sobre_nome" label="Sobre Nome" placeholder="Sobre Nome" [invalid]="false" 
+          formControlName="SobreNome"></md-input>
       </div>
-      <div class="item" *ngIf="indexId === 1">
-        <h1>Test 002</h1>
+
+      <div formGroupName="TemplateTwo" class="item" [class.item__visible]="indexId === 1">
+        <md-input class="ipt" id="rua" label="Rua" placeholder="Rua do Usuário" [invalid]="false" 
+          formControlName="Rua"></md-input>
+        <md-input class="ipt" id="bairro" label="Bairro" placeholder="Bairro" [invalid]="false" 
+          formControlName="Bairro"></md-input>
+        <md-input class="ipt" id="Cidade" label="Cidade" placeholder="Cidade" [invalid]="false" 
+          formControlName="Cidade"></md-input>
+        <md-input class="ipt" id="Estado" label="Estado" placeholder="Estado" [invalid]="false" 
+          formControlName="Estado"></md-input>
       </div>
-      <div class="item" *ngIf="indexId === 2">
-        <h1>Test 003</h1>
+
+      <div formGroupName="TemplateThree" class="item" [class.item__visible]="indexId === 2">
+        <md-input class="ipt" id="Idade" label="Idade" placeholder="Idade" [invalid]="false" 
+        formControlName="Idade"></md-input>
+        <md-input class="ipt" id="Nascimento" label="Nascimento" placeholder="Nascimento" [invalid]="false" 
+        formControlName="Nascimento"></md-input>
+        <md-input class="ipt" id="CidadeDeNascimento" label="Cidade onde Nascimento" placeholder="Cidade onde Nascimento" [invalid]="false" 
+        formControlName="CidadeDeNascimento"></md-input>
+        <md-input class="ipt" id="EstadoDeNascimento" label="Estado onde Nascimento" placeholder="Estado onde Nascimento" [invalid]="false" 
+        formControlName="EstadoDeNascimento"></md-input>
       </div>
-      <div class="item" *ngIf="indexId === 3">
-        <h1>Test 004</h1>
+
+      <div formGroupName="TemplateFour" class="item" [class.item__visible]="indexId === 3">
+        <md-input class="ipt" id="Empressa" label="Empressa" placeholder="Empressa" [invalid]="false" 
+        formControlName="Empressa"></md-input>
+        <md-input class="ipt" id="Cargo" label="Cargo" placeholder="Cargo Atual" [invalid]="false" 
+        formControlName="Cargo"></md-input>
+        <md-input class="ipt" id="Setor" label="Setor" placeholder="Setor" [invalid]="false" 
+        formControlName="Setor"></md-input>
       </div>
-      <div class="item" *ngIf="indexId === 4">
-        <h1>Test 005</h1>
+
+      <div formGroupName="TemplateFive" class="item" [class.item__visible]="indexId === 4">
+        <md-input class="ipt" id="NomeEsposa" label="Nome da Esposa" placeholder="Nome da Esposa" [invalid]="false" 
+        formControlName="NomeEsposa"></md-input>
+        <md-input class="ipt" id="NomeFilho" label="Nome do Filho" placeholder="Nome do Filho" [invalid]="false" 
+        formControlName="NomeFilho"></md-input>
       </div>
-      <div class="item" *ngIf="indexId === 5">
-        <h1>Test 006</h1>
+
+      <div formGroupName="TemplateSix" class="item" [class.item__visible]="indexId === 5">
+        <md-input class="ipt" id="Evento" label="Evento" placeholder="Evento" [invalid]="false" 
+        formControlName="Evento"></md-input>
+        <md-input class="ipt" id="Cidade" label="Cidade" placeholder="Cidade" [invalid]="false" 
+        formControlName="Cidade"></md-input>
+        <md-input class="ipt" id="Bairro" label="Bairro" placeholder="Bairro" [invalid]="false" 
+        formControlName="Bairro"></md-input>
+        <md-input class="ipt" id="Estado" label="Estado" placeholder="Estado" [invalid]="false" 
+        formControlName="Estado"></md-input>
       </div>
+
     </form>
   </div>
+  <pre>
+    {{
+      form.value | json
+    }}
+  </pre>
 </div>
