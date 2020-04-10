@@ -1,9 +1,8 @@
-<ul class="stepper-container">
-	<li class="stepper-line" *ngFor="let item of listIcons; let i = index" 
-		[class.stepper-line__stepper_color]="item.completed"
-		[ngStyle]="{'justify-content': iconDirection}">
-		<a class="action" (click)="sendStepper.emit(i)">
-			<i class="{{ item.Icon }} icons"></i>
-		</a>
+<ul class="container">
+	<li class="stepper" *ngFor="let item of listIcons;let i = index"
+		[class.stepper__completed]="indexId[i] === i && item.completed">
+		<a class="icons" [class.icons__completed]="indexId[i] === i && item.completed" (click)="sendStepper.emit(i)">
+			<i class="{{ item.Icon }}"></i>
+		</a>	
 	</li>
 </ul>

@@ -1,65 +1,66 @@
 @import '../../../../assets/styles/colors.scss';
 @import '../../../../assets/styles/mixis.scss';
 
-.stepper-container {
-	width: 100%;
-	height: 35px;
-	display: flex;
-	align-items: center;
-	.stepper-line {
-		width: 100%;
-		height: 4px;
-		background-color: $secundary-stepper;
-		display: flex;
-		align-items: center;
-    box-sizing: border-box;
-    .action {
-      z-index: 1;
-      .icons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 25px;
-        height: 25px;
-        background-color: $white;
-        padding: 2px;
-        border: 2px solid $secundary-stepper;
-        border-radius: 50%;
-        font-size: 15px;
-        cursor: pointer;
-        color: #333;
-      }
-    }
-    &:nth-child(n + 1) {
-      border-radius: 10px;
-      margin-left: -2px;
-    }
-    &__stepper_color {
-      animation: __stepper  1s 100ms both;
-      background-color: $primary-stepper;
-      .icons {
-        border: 2px solid $primary-stepper;
-        animation: __stepper_border 1s 100ms both;
-        color: $primary-stepper;
-      }
-    }
-	}
-}
-
-@keyframes __stepper {
-  from {
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .stepper {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 4px;
     background-color: $secundary-stepper;
-  }
-  to {
-    background-color: $primary-stepper;
+    &:last-child {
+      width: 0;
+    }
+    &__completed {
+      &::after {
+        content: '';
+        background-color: $primary-stepper;
+        animation: stepper 1s both;
+      }
+    }
+    .icons {
+      width: 30px;
+      height: 30px;
+      background-color: #FFF;
+      border-radius: 50%;
+      position: absolute;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid $secundary-stepper;
+      &__completed {
+        border: 3px solid $primary-stepper;
+        animation: stepper_border 1s both;
+      }
+    }
   }
 }
 
-@keyframes __stepper_border {
+@keyframes stepper {
   from {
-    border-color: $secundary-stepper;
+    width: 0%;
+    height: 4px;
+    background-color: #55b776;
   }
   to {
-    border-color: $primary-stepper;
+    width: 100%;
+    height: 4px;
+    background-color: #55b776;
+  }
+}
+
+@keyframes stepper_border {
+  0% { 
+    transform: scale(1);
+  }
+  50% { 
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
   }
 } 
