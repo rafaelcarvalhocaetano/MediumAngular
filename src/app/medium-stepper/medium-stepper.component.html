@@ -3,8 +3,7 @@
     <h4>Stepper Default</h4>
     <md-stepper [listIcons]="listIcons" (sendStepper)="stepperEvent($event)"></md-stepper>
    
-    <form class="container-templates" [formGroup]="form">
-
+    <!-- <form class="container-templates" [formGroup]="form">
       <div  class="item" 
         [class.item__visible]="indexId === 0 || indexId === null">
         <md-input class="ipt" id="nome" label="Nome" placeholder="Nome do Usuário" [invalid]="false"
@@ -61,7 +60,8 @@
         <md-input class="ipt" id="Estado" label="Estado" placeholder="Estado" [invalid]="false" 
         formControlName="Estado"></md-input>
       </div>
+    </form> -->
 
-    </form>
+
   </div>
 </div>

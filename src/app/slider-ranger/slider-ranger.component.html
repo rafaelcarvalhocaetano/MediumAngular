@@ -1,0 +1,7 @@
+<h1>{{ valorRecebido }}</h1>
+<h1>{{ item }}</h1>
+
+<div class="ranger">
+  <input class="max" type="range" min="0" max="10" step="1" (input)="getInteration($event, 'decrement')">
+  <input class="min" type="range" min="0" max="10" step="1" (input)="getInteration($event, 'increment')">
+</div>

@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'prefix',
-    redirectTo: 'stepper'
+    redirectTo: 'ranger'
   },
   {
     path: '',
@@ -15,6 +15,10 @@ const routes: Routes = [
         path: 'stepper', loadChildren: () => import('./medium-stepper/medium-stepper.module').then(ms => ms.MediumStepperModule)
       }
     ]
+  },
+  {
+    path: 'ranger',
+    loadChildren: () => import('./slider-ranger/slider-ranger.module').then(sr => sr.SliderRangerModule)
   }
 ];
 

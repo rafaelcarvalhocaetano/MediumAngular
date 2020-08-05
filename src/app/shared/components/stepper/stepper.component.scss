@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     width: 200px;
-    height: 4px;
+    height: 2px;
     background-color: $secundary-stepper;
     &:last-child {
       width: 0;
@@ -31,9 +31,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 3px solid $secundary-stepper;
+      border: 1px solid $secundary-stepper;
       &__completed {
-        border: 3px solid $primary-stepper;
+        border: 1px solid $primary-stepper;
         animation: stepper_border 1s both;
       }
     }
