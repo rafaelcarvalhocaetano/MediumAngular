@@ -1,35 +1,41 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+
+import * as moment from 'moment';
 
 @Component({
   selector: 'md-slider-ranger',
   templateUrl: './slider-ranger.component.html',
   styleUrls: ['./slider-ranger.component.scss']
 })
-export class SliderRangerComponent {
+export class SliderRangerComponent implements OnInit {
 
-  public valueRanger = 0;
-  public min = 0;
-  public max = 10;
-  public valorRecebido = 200;
-  item = '';
 
-  getInteration(event, data: string) {
+  public start;
+  public end;
+  public date;
 
-    const newValue = Number((event.target.value - this.min) * 100 / (this.max - this.min));
-    const newPosition = 10 - (newValue * 0.2);
-    console.log("SliderRangerComponent -> getInteration -> newPosition", newPosition)
-    if (data === 'decrement') {
-      if (newPosition < 0) {
-        console.log(' dataitem ---- ');
-        this.valorRecebido -= Number(event.target.value);
-      } else {
-        console.log(' dataitem ++++ ');
-        this.valorRecebido += Number(event.target.value);
-      }
-    }
+  public listDay = [];
+
+
+
+  ngOnInit(): void {
+    this.time();
   }
 
+  public time() {
+    const ter = new Date();
+    this.date = moment(new Date(ter), 'MM/DD/YYYY');
+    // this.start = this.date.startOf('years').toISOString();
+    // this.end = this.date.endOf('years').toISOString();
 
+    const dateLocale = this.date._locale;
+    console.log("SliderRangerComponent -> time -> trt", dateLocale)
 
+    // FULL - MES
+    dateLocale._months.forEach((x: string) => console.log(' data ', x));
+    // FULL WEEKDAY
+    dateLocale._weekdays.forEach((x: string) => console.log(' data ', x));
+    // dateLocale._months.forEach((x: string) => console.log(' data ', x));
+  }
 
 }
