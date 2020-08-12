@@ -4,14 +4,12 @@
     <p>{{ date | date:'MMMM y' }}</p>
     <button class="btn">></button>
   </div>
-  <div class="weekdays">
-    <div *ngFor="let day of localeDates._weekdaysMin">
-      <p>{{ day }}</p>
-    </div>
+  <div class="line-week">
+    <p *ngFor="let day of meses; let i = index">{{ localeDates._weekdaysMin[i] }}</p>
   </div>
-  <div class="list-day" >
-    <div class="column" *ngFor="let day of newArray(calender); let i = index">
-      <p>{{ i + 1 }}</p>
+  <div class="weekdays" *ngFor="let item of meses; let i = index">
+    <div class="column" *ngFor="let day of meses[i]; let j = index">
+      <p>{{ day ? day :  '-' }}</p>
     </div>
   </div>
 </div>
