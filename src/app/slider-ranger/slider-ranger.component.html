@@ -1,14 +1,21 @@
 <div class="container">
   <div class="header-time">
-    <button class="btn"><</button>
-    <p>{{ date | date:'MMMM y' }}</p>
-    <button class="btn">></button>
+    <button class="btn" id="btn-back-calendar" (click)="backMonth()">
+      <img src="../../../../assets/svgs/arrow_left.svg" alt="Seta ">      
+    </button>
+    <div class="month-year-container">
+      <p class="month">{{ localeDates._months[month + increment] }}</p>
+      <p class="year">{{ date | date:'y' }}</p>
+    </div>
+    <button class="btn" id="btn-next-calendar" (click)="nextMonth()">
+      <img src="../../../../assets/svgs/arrow_right_ico.svg" alt="Seta proxima">
+    </button>
   </div>
   <div class="line-week">
-    <p *ngFor="let day of meses; let i = index">{{ localeDates._weekdaysMin[i] }}</p>
+    <p *ngFor="let day of listWeek; let i = index">{{ day }}</p>
   </div>
-  <div class="weekdays" *ngFor="let item of meses; let i = index">
-    <div class="column" *ngFor="let day of meses[i]; let j = index">
+  <div class="weekdays" *ngFor="let item of months; let i = index">
+    <div class="column" *ngFor="let day of months[i]; let j = index" [ngClass]="{'atual': initialDay === day }"  (click)="selectDay(day)">
       <p>{{ day ? day :  '-' }}</p>
     </div>
   </div>
