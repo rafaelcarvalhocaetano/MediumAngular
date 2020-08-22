@@ -4,12 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { StepperComponent } from './components/stepper/stepper.component';
 import { InputComponent } from './components/input/input.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 
 @NgModule({
   declarations: [
     StepperComponent,
-    InputComponent
+    InputComponent,
+    CalendarComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { InputComponent } from './components/input/input.component';
     InputComponent,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CalendarComponent
   ]
 })
 export class SharedModule { }

@@ -1,17 +1,7 @@
-<div class="container">
-  <div class="header-time">
-    <button class="btn"><</button>
-    <p>{{ date | date:'MMMM y' }}</p>
-    <button class="btn">></button>
-  </div>
-  <div class="weekdays">
-    <div *ngFor="let day of localeDates._weekdaysMin">
-      <p>{{ day }}</p>
-    </div>
-  </div>
-  <div class="list-day" >
-    <div class="column" *ngFor="let day of newArray(calender); let i = index">
-      <p>{{ i + 1 }}</p>
-    </div>
-  </div>
+<h1>{{ valorRecebido }}</h1>
+<h1>{{ item }}</h1>
+
+<div class="ranger">
+  <input class="max" type="range" min="0" max="10" step="1" (input)="getInteration($event, 'decrement')">
+  <input class="min" type="range" min="0" max="10" step="1" (input)="getInteration($event, 'increment')">
 </div>

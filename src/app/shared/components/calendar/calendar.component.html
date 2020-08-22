@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="header-time">
+    <button class="btn"><</button>
+    <p>{{ date | date:'MMMM y' }}</p>
+    <button class="btn">></button>
+  </div>
+  <div class="weekdays">
+    <div *ngFor="let day of localeDates._weekdaysMin">
+      <p>{{ day }}</p>
+    </div>
+  </div>
+  <div class="list-day" >
+    <div class="column" *ngFor="let day of newArray(calender); let i = index">
+      <p>{{ i + 1 }}</p>
+    </div>
+  </div>
+</div>

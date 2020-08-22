@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'prefix',
-    redirectTo: 'ranger'
+    redirectTo: 'calendar'
   },
   {
     path: '',
@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'ranger',
     loadChildren: () => import('./slider-ranger/slider-ranger.module').then(sr => sr.SliderRangerModule)
+  },
+  {
+    path: 'calendar',
+    loadChildren: () => import('./calendar/calendar.module').then(c => c.CalendarModule)
   }
 ];
 
