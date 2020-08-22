@@ -1,14 +1,14 @@
 <div class="container">
   <div class="header-time">
     <button class="btn" id="btn-back-calendar" (click)="backMonth()">
-      <img src="../../../../assets/svgs/arrow_left.svg" alt="Seta ">      
+      <i class="fas fa-angle-left"></i>    
     </button>
     <div class="month-year-container">
       <p class="month">{{ localeDates._months[month + increment] }}</p>
       <p class="year">{{ date | date:'y' }}</p>
     </div>
     <button class="btn" id="btn-next-calendar" (click)="nextMonth()">
-      <img src="../../../../assets/svgs/arrow_right_ico.svg" alt="Seta proxima">
+      <i class="fas fa-angle-right"></i>
     </button>
   </div>
   <div class="line-week">
