@@ -21,8 +21,7 @@ export class CalendarComponent implements OnInit {
   public initialDay = new Date().getDate();
   public month = new Date().getMonth();
   public listWeek = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
-  public listMonth = [
-    'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio',
+  public listMonth = [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio',
     'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
   ngOnInit(): void {
@@ -88,5 +87,11 @@ export class CalendarComponent implements OnInit {
 
   public selectDay(indexDay: number) {
     this.initialDay = indexDay;
+  }
+
+
+  public dayNegative(day: any): number {
+    console.log("🚀 ~ file: calendar.component.ts ~ line 94 ~ CalendarComponent ~ dayNegative ~ day", day)
+    return day - 1;
   }
 }

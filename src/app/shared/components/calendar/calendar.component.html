@@ -1,7 +1,20 @@
+<div class="header-time">
+  <button class="btn" id="btn-back-calendar" (click)="backMonth()">
+    <i class="fas fa-angle-left"></i>
+  </button>
+  <div class="month-year-container">
+    <p class="month">{{ localeDates._months[month + increment] }}</p>
+    <p class="year">{{ date | date:'y' }}</p>
+  </div>
+  <button class="btn" id="btn-next-calendar" (click)="nextMonth()">
+    <i class="fas fa-angle-right"></i>
+  </button>
+</div>
+
 <div class="container">
-  <div class="header-time">
+  <!-- <div class="header-time">
     <button class="btn" id="btn-back-calendar" (click)="backMonth()">
-      <i class="fas fa-angle-left"></i>    
+      <i class="fas fa-angle-left"></i>
     </button>
     <div class="month-year-container">
       <p class="month">{{ localeDates._months[month + increment] }}</p>
@@ -10,13 +23,15 @@
     <button class="btn" id="btn-next-calendar" (click)="nextMonth()">
       <i class="fas fa-angle-right"></i>
     </button>
-  </div>
+  </div> -->
   <div class="line-week">
     <p *ngFor="let day of listWeek; let i = index">{{ day }}</p>
   </div>
   <div class="weekdays" *ngFor="let item of months; let i = index">
-    <div class="column" *ngFor="let day of months[i]; let j = index" [ngClass]="{'atual': initialDay === day }"  (click)="selectDay(day)">
-      <p>{{ day ? day :  '-' }}</p>
+    <div class="column" *ngFor="let day of months[i]; let j = index" [ngClass]="{'atual': initialDay === day }"
+      (click)="selectDay(day)" [ngStyle]="{'background-color': initialDay === day ? 'red' : '' }">
+      <!-- <p>{{ day ? day : '-' }}</p> -->
+      <p>{{ day ? day : dayNegative(item) }}</p>
     </div>
   </div>
 </div>
